@@ -1,7 +1,8 @@
 # online mstcn++
 
 ## Use Case and High-Level Description
-TODO
+This is an online action segmentation network for 16 classes trained on Intel dataset. It is an online version of MSTCN++ [1]. The difference between online mstcn++ and mstcn++ is that the former accept stream video as input while the latter assume the whole video is given.
+[1] Li, Shi-Jie, et al. "Ms-tcn++: Multi-stage temporal convolutional network for action segmentation." IEEE transactions on pattern analysis and machine intelligence (2020).
 
 ## ONNX Models
 
@@ -31,11 +32,11 @@ TODO
 
 ### Input
 
-TODO
+The input to the network is feature vectors at each frame, i.e., 1024xL where L is the number of frames(batch size).
 
 ### Output
 
-TODO
+The ouput is [predictions, fea_his] where predictions is the action classification and prediction results. fea_his is the model layer features in past frames
 
 ## Download a Model and Convert it into Inference Engine Format
 
