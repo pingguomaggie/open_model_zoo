@@ -1,7 +1,8 @@
 # online mstcn++
 
 ## Use Case and High-Level Description
-TODO
+This is a action segmenation network for 16 classes trained on Intel Dataset of scale balancing experiment.  The network structure is similar to MSTCN++ [1] but modified into online version. It is developed for online action segmenation where the data input is video stream.
+[1] Li, Shi-Jie, et al. "Ms-tcn++: Multi-stage temporal convolutional network for action segmentation." IEEE transactions on pattern analysis and machine intelligence (2020).
 
 ## ONNX Models
 
@@ -31,11 +32,13 @@ TODO
 
 ### Input
 
-TODO
+Feature vectors : 1024xL where L is the video length
 
 ### Output
 
-TODO
+action classification results : [predictions, fea_his]
+The predictions is the action classification and prediction result with size of [4,1,Nclass*4,L] 
+fea_his is a list of history features with length of 4. Each fea_his[i] (i=0,1,2,3) is the history features at the i-th block.
 
 ## Download a Model and Convert it into Inference Engine Format
 
